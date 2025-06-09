@@ -176,7 +176,7 @@ def pilih_fitur(df):
 
 # GAUSSIAN MIXTURE MODEL
 class GMM():
-    def __init__(self, n_components=5, max_iter=100, tol=1e-4, random_state=None, reg_covar=1e-6):
+    def __init__(self, n_components=5, max_iter=10, tol=1e-4, random_state=None, reg_covar=1e-6):
         self.n_components = n_components
         self.max_iter = max_iter
         self.tol = tol
@@ -503,7 +503,7 @@ def menampilkan_data_hasil_klaster(df, channels, window_size=1000, cluster_stage
     if use_streamlit:
         status_text.text("Melatih model GMM...")
     
-    gmm = GMM(n_components=len(cluster_stage_labels), max_iter=100, tol=1e-4)
+    gmm = GMM(n_components=len(cluster_stage_labels), max_iter=10, tol=1e-4)
     gmm.fit(X)
     
     probabilities = gmm.predict_proba(X)
@@ -559,7 +559,7 @@ def tampilan_widget():
             st.write("Label Klaster yang Diprediksi:")
             df_result = df.iloc[:len(labels)].copy()
             df_result['Predicted_Label'] = labels
-            st.dataframe(df_result.head(10))
+            st.dataframe(df_result)
 
             fig = gmm.plot_clusters_2d(X, labels, feature_names=selected_features)
             st.pyplot(fig)
