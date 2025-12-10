@@ -29,10 +29,10 @@ Aplikasi ini dirancang untuk keperluan akademik dan penelitian, khususnya dalam 
 ---
 
 ## 🗂️ Struktur Proyek
-├── app.py                       # Kode utama Streamlit
-├── extrait_wSleepPage01.csv     # Contoh dataset EEG
-├── README.md                    # Dokumentasi proyek
-└── requirements.txt             # Dependensi Python
+├── app.py                  
+├── extrait_wSleepPage01.csv    
+├── README.md                  
+└── requirements.txt            
 
 
 ---
